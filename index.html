@@ -327,7 +327,7 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="tel:08005980775" class="btn btn-outline">Call Now</a>
+      <a href="tel:08005980775" class="btn btn-outline cms-phone-link">Call Now</a>
       <a href="#book" class="btn btn-volt">Book Free Trial</a>
     </div>
     <button class="menu-toggle" id="menuToggle">☰</button>
@@ -342,8 +342,8 @@
         <span class="pill"><span class="dot-live"></span> Open now · Closes 11 PM</span>
         <span class="pill">★ <b>4.7</b> · 39 Google Reviews</span>
       </div>
-      <h1>Train harder<br>at <em>THE ENERGY</em><br>FITNESS GYM</h1>
-      <p class="lead">Crossfit, personal training, weight training and nutrition consulting — new imported equipment, right in the basement of Krishna Complex, Behror.</p>
+      <h1 id="cms-hero-title">Train harder<br>at <em>THE ENERGY</em><br>FITNESS GYM</h1>
+      <p class="lead" id="cms-hero-lead">Crossfit, personal training, weight training and nutrition consulting — new imported equipment, right in the basement of Krishna Complex, Behror.</p>
       <div class="hero-actions">
         <a href="#book" class="btn btn-flame">Book a Free Trial</a>
         <a href="#pricing" class="btn btn-outline">Check Membership Rates</a>
@@ -532,9 +532,9 @@
           <p>New here? Start with a free trial class. Already a member? Book your training slot for the day and time that works.</p>
         </div>
         <div class="booking-info-list">
-          <div>📍 Krishna Complex Basement, Behror, Rajasthan 301701</div>
+          <div>📍 <span class="cms-address">Krishna Complex Basement, Behror, Rajasthan 301701</span></div>
           <div>🕚 Open daily · Closes 11 PM</div>
-          <div>📞 080059 80775</div>
+          <div>📞 <span class="cms-phone-display">080059 80775</span></div>
         </div>
       </div>
       <div class="booking-form">
@@ -611,7 +611,7 @@
     <div class="review-strip">
       <div class="review-card">
         <div class="stars">★★★★★</div>
-        <p>"Best and friendly environment. New and imported machines — best gym in Behror."</p>
+        <p id="cms-testimonial">"Best and friendly environment. New and imported machines — best gym in Behror."</p>
         <div class="review-who">Google Review</div>
       </div>
       <div class="review-card">
@@ -639,7 +639,7 @@
         <div class="contact-icon">📍</div>
         <div>
           <h4>Address</h4>
-          <p>Krishna Complex Basement, Behror, Rajasthan 301701</p>
+          <p class="cms-address">Krishna Complex Basement, Behror, Rajasthan 301701</p>
         </div>
       </div>
       <div class="contact-item">
@@ -653,7 +653,7 @@
         <div class="contact-icon">📞</div>
         <div>
           <h4>Phone</h4>
-          <a href="tel:08005980775">080059 80775</a>
+          <a href="tel:08005980775" class="cms-phone-link cms-phone-display">080059 80775</a>
         </div>
       </div>
       <div class="contact-item">
@@ -688,7 +688,7 @@
   <div class="wrap foot-grid">
     <div>
       <div class="logo">ENERGY<span>.</span>FITNESS</div>
-      <p class="foot-copy">Krishna Complex Basement, Behror, Rajasthan 301701</p>
+      <p class="foot-copy cms-address">Krishna Complex Basement, Behror, Rajasthan 301701</p>
     </div>
     <div class="foot-links">
       <a href="#services">Services</a>
@@ -836,5 +836,29 @@
   renderPrices();
 </script>
 
+
+<script>
+  // Loads editable text from content.json so it can be updated via the admin panel
+  fetch('/content.json').then(r => r.json()).then(data => {
+    const heroTitle = document.getElementById('cms-hero-title');
+    if (heroTitle && data.hero_title) heroTitle.innerHTML = data.hero_title;
+
+    const heroLead = document.getElementById('cms-hero-lead');
+    if (heroLead && data.hero_lead) heroLead.textContent = data.hero_lead;
+
+    const testimonial = document.getElementById('cms-testimonial');
+    if (testimonial && data.testimonial) testimonial.textContent = data.testimonial;
+
+    if (data.address) {
+      document.querySelectorAll('.cms-address').forEach(el => el.textContent = data.address);
+    }
+    if (data.phone_display) {
+      document.querySelectorAll('.cms-phone-display').forEach(el => el.textContent = data.phone_display);
+    }
+    if (data.phone_number) {
+      document.querySelectorAll('.cms-phone-link').forEach(el => el.setAttribute('href', 'tel:' + data.phone_number));
+    }
+  }).catch(() => {});
+</script>
 </body>
 </html>
