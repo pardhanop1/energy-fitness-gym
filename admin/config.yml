@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site_content"
+    label: "Website Content"
+    files:
+      - name: "main"
+        label: "Homepage Content"
+        file: "content.json"
+        fields:
+          - { label: "Hero Heading", name: "hero_title", widget: "string", hint: "Use <br> for line breaks, <em>text</em> to highlight" }
+          - { label: "Hero Subtext", name: "hero_lead", widget: "text" }
+          - { label: "Phone Number (display, e.g. 080059 80775)", name: "phone_display", widget: "string" }
+          - { label: "Phone Number (call link, digits only e.g. 08005980775)", name: "phone_number", widget: "string" }
+          - { label: "Gym Address", name: "address", widget: "string" }
+          - { label: "Member Testimonial", name: "testimonial", widget: "text" }
