@@ -13,9 +13,24 @@ collections:
         label: "Homepage Content"
         file: "content.json"
         fields:
-          - { label: "Hero Heading", name: "hero_title", widget: "string", hint: "Use <br> for line breaks, <em>text</em> to highlight" }
-          - { label: "Hero Subtext", name: "hero_lead", widget: "text" }
+          - { label: "Heading — Line 1", name: "hero_line1", widget: "string" }
+          - { label: "Heading — Highlighted Word", name: "hero_highlight", widget: "string" }
+          - { label: "Heading — Line 2", name: "hero_line2", widget: "string" }
+          - { label: "Subheading Text", name: "hero_lead", widget: "text" }
           - { label: "Phone Number (display, e.g. 080059 80775)", name: "phone_display", widget: "string" }
           - { label: "Phone Number (call link, digits only e.g. 08005980775)", name: "phone_number", widget: "string" }
           - { label: "Gym Address", name: "address", widget: "string" }
           - { label: "Member Testimonial", name: "testimonial", widget: "text" }
+          - { label: "1 Month Price (₹)", name: "price_1_month", widget: "number" }
+          - { label: "3 Month Price (₹)", name: "price_3_month", widget: "number" }
+          - { label: "12 Month Price (₹)", name: "price_12_month", widget: "number" }
+          - label: "Offers & Events"
+            name: "offers"
+            widget: "list"
+            label_singular: "Offer"
+            summary: "{{title}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image", required: false }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Valid Until (optional)", name: "expiry", widget: "string", required: false, hint: "e.g. 30 Sept 2026" }
