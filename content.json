@@ -1,14 +1,21 @@
 {
-  "hero_line1": "Train harder",
-  "hero_highlight": "THE ENERGY",
-  "hero_line2": "FITNESS GYM",
   "hero_lead": "Crossfit, personal training, weight training and nutrition consulting — new imported equipment, right in the basement of Krishna Complex, Behror.",
+  "hero_highlight": "THE ENERGY",
   "phone_display": "080059 80775",
-  "phone_number": "08005980775",
   "address": "Krishna Complex Basement, Behror, Rajasthan 301701",
-  "testimonial": "Best and friendly environment. New and imported machines — best gym in Behror.",
+  "offers": [
+    {
+      "image": "/uploads/screenshot_20260831-123201.jpg",
+      "title": "The new site opening offer",
+      "expiry": "3 sept 2026",
+      "description": "It's a new offer for new commers on the behalf of tushar yadav for the opening for this site"
+    }
+  ],
+  "price_12_month": 21000,
+  "hero_line1": "Train harder",
+  "hero_line2": "FITNESS GYM",
+  "phone_number": "08005980775",
   "price_1_month": 2000,
   "price_3_month": 5000,
-  "price_12_month": 20000,
-  "offers": []
+  "testimonial": "Best and friendly environment. New and imported machines — best gym in Behror."
 }
