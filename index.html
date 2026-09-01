@@ -50,13 +50,11 @@
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
   ::selection{background:var(--volt);color:var(--black);}
 
-  /* ---------- stripe motif ---------- */
   .stripes{
     background-image:repeating-linear-gradient(-45deg,var(--volt) 0 14px, var(--black) 14px 28px);
     height:6px;
   }
 
-  /* ---------- header ---------- */
   header{
     position:sticky;top:0;z-index:50;
     background:rgba(19,20,23,0.92);
@@ -97,7 +95,6 @@
   .btn-block{width:100%;justify-content:center;padding:14px;font-size:15px;}
   .menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer;}
 
-  /* ---------- hero ---------- */
   .hero{
     position:relative;
     padding:72px 0 56px;
@@ -149,7 +146,6 @@
     border:1px dashed var(--line);padding:8px 10px;text-align:center;
   }
 
-  /* ---------- section shell ---------- */
   section{padding:80px 0;}
   .section-head{margin-bottom:44px;max-width:600px;}
   .kicker{color:var(--flame);font-weight:700;font-size:13px;margin-bottom:10px;}
@@ -157,7 +153,6 @@
   .section-head p{color:var(--gray);margin-top:14px;font-size:15.5px;}
   .band{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 
-  /* ---------- services / categories ---------- */
   .service-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
   .service{
     border-bottom:1px solid var(--line);
@@ -188,7 +183,6 @@
   .sub-item:last-child{border-bottom:none;padding-bottom:0;}
   .sub-item span:last-child{color:var(--gray);font-size:13px;}
 
-  /* ---------- pricing ---------- */
   .plan-toggle{
     display:inline-flex;border:1px solid var(--line);border-radius:100px;padding:4px;margin-bottom:36px;
   }
@@ -219,7 +213,18 @@
   }
   .discount-note b{color:var(--volt);}
 
-  /* ---------- booking ---------- */
+  .offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .offer-card{
+    border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .offer-image{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--panel-2);}
+  .offer-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+  .offer-title{font-family:'Anton',sans-serif;font-size:19px;color:var(--white);margin-bottom:8px;letter-spacing:0.01em;}
+  .offer-desc{color:var(--gray);font-size:13.5px;flex:1;}
+  .offer-expiry{margin-top:14px;color:var(--volt);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;}
+  #offersSection{display:none;}
+
   .booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
   .booking-info{background:var(--volt);color:var(--black);padding:48px;display:flex;flex-direction:column;justify-content:space-between;}
   .booking-info h3{font-size:34px;margin-bottom:16px;}
@@ -247,14 +252,12 @@
     padding:14px 16px;border-radius:var(--radius);font-size:13.5px;
   }
 
-  /* ---------- reviews ---------- */
   .review-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .review-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--panel);}
   .stars{color:var(--volt);letter-spacing:2px;margin-bottom:14px;font-size:14px;}
   .review-card p{font-size:14.5px;color:var(--white);margin-bottom:16px;}
   .review-who{font-size:12.5px;color:var(--gray);font-weight:700;}
 
-  /* ---------- contact ---------- */
   .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;}
   .contact-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
   .contact-item:first-child{padding-top:0;}
@@ -263,14 +266,12 @@
   .contact-item p,.contact-item a{font-size:13.5px;color:var(--gray);}
   .contact-item a:hover{color:var(--volt);}
 
-  /* ---------- footer ---------- */
   footer{border-top:1px solid var(--line);padding:44px 0 26px;}
   .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;}
   .foot-links{display:flex;gap:24px;font-size:13px;color:var(--gray);}
   .foot-links a:hover{color:var(--volt);}
   .foot-copy{font-size:12px;color:var(--gray);margin-top:24px;}
 
-  /* ---------- floating whatsapp ---------- */
   .float-wa{
     position:fixed;bottom:22px;right:22px;z-index:60;
     width:56px;height:56px;border-radius:50%;background:#25D366;
@@ -284,6 +285,7 @@
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{aspect-ratio:16/9;}
     .plans{grid-template-columns:1fr;}
+    .offers-grid{grid-template-columns:1fr;}
     .booking-wrap{grid-template-columns:1fr;}
     .booking-info,.booking-form{padding:32px 24px;}
     .field-row{grid-template-columns:1fr;}
@@ -342,7 +344,7 @@
         <span class="pill"><span class="dot-live"></span> Open now · Closes 11 PM</span>
         <span class="pill">★ <b>4.7</b> · 39 Google Reviews</span>
       </div>
-      <h1 id="cms-hero-title">Train harder<br>at <em>THE ENERGY</em><br>FITNESS GYM</h1>
+      <h1><span id="cms-hero-line1">Train harder</span><br>at <em id="cms-hero-highlight">THE ENERGY</em><br><span id="cms-hero-line2">FITNESS GYM</span></h1>
       <p class="lead" id="cms-hero-lead">Crossfit, personal training, weight training and nutrition consulting — new imported equipment, right in the basement of Krishna Complex, Behror.</p>
       <div class="hero-actions">
         <a href="#book" class="btn btn-flame">Book a Free Trial</a>
@@ -513,6 +515,18 @@
       <span>💪</span>
       <div><b>Couple discount:</b> Sign up with your partner and get 20% off the combined membership cost, on any plan length. Switch the toggle above to see couple pricing.</div>
     </div>
+  </div>
+</section>
+
+<!-- ================= OFFERS & EVENTS ================= -->
+<section id="offersSection">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">OFFERS &amp; EVENTS</div>
+      <h2>Current offers</h2>
+      <p>Special deals and upcoming events at the gym.</p>
+    </div>
+    <div class="offers-grid" id="offersGrid"></div>
   </div>
 </section>
 
@@ -708,7 +722,6 @@
 </a>
 
 <script>
-  // ---- accordion ----
   document.querySelectorAll('[data-toggle]').forEach(head=>{
     head.addEventListener('click',()=>{
       const item = head.closest('.service');
@@ -718,9 +731,7 @@
     });
   });
 
-  // ---- pricing calculator ----
-  const basePrices = {1:2000, 3:5000, 12:20000};
-  const oldMonthly = {1:2000, 3:6000, 12:24000};
+  let basePrices = {1:2000, 3:5000, 12:20000};
   let mode = 'individual';
 
   document.querySelectorAll('#planToggle button').forEach(btn=>{
@@ -741,8 +752,10 @@
       if(mode === 'individual'){
         priceText = price.toLocaleString('en-IN');
         if(term != 1){
-          const diff = oldMonthly[term] - price;
-          saveText = 'Save ₹' + diff.toLocaleString('en-IN') + ' vs monthly';
+          const diff = (basePrices[1] * term) - price;
+          if(diff > 0){
+            saveText = 'Save ₹' + diff.toLocaleString('en-IN') + ' vs monthly';
+          }
         }
       } else {
         const couplePrice = Math.round(price * 2 * 0.8);
@@ -754,7 +767,6 @@
     });
   }
 
-  // ---- booking type segment ----
   let bookingType = 'Free Trial';
   document.querySelectorAll('[data-booking-type]').forEach(btn=>{
     btn.addEventListener('click',()=>{
@@ -764,7 +776,6 @@
     });
   });
 
-  // ---- plan select -> jump to booking, prefill ----
   document.querySelectorAll('[data-select-plan]').forEach(btn=>{
     btn.addEventListener('click',(e)=>{
       const plan = btn.dataset.selectPlan;
@@ -777,7 +788,6 @@
     });
   });
 
-  // ---- booking submit -> WhatsApp ----
   document.getElementById('bkSubmit').addEventListener('click', ()=>{
     const name = document.getElementById('bkName').value.trim();
     const phone = document.getElementById('bkPhone').value.trim();
@@ -800,7 +810,6 @@
     box.textContent = `Thanks ${name} — your ${bookingType.toLowerCase()} request has been drafted on WhatsApp. Hit send there and we'll confirm your slot shortly.`;
   });
 
-  // ---- contact submit -> WhatsApp ----
   document.getElementById('cSubmit').addEventListener('click', ()=>{
     const name = document.getElementById('cName').value.trim();
     const phone = document.getElementById('cPhone').value.trim();
@@ -819,7 +828,6 @@
     box.textContent = `Thanks ${name} — your message has been drafted on WhatsApp. Hit send there and we'll get back to you.`;
   });
 
-  // ---- mobile menu (simple scroll-to-top-links fallback) ----
   document.getElementById('menuToggle').addEventListener('click', ()=>{
     const links = document.querySelector('.nav-links');
     links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
@@ -836,18 +844,22 @@
   renderPrices();
 </script>
 
-
 <script>
-  // Loads editable text from content.json so it can be updated via the admin panel
   fetch('/content.json').then(r => r.json()).then(data => {
-    const heroTitle = document.getElementById('cms-hero-title');
-    if (heroTitle && data.hero_title) heroTitle.innerHTML = data.hero_title;
+    const l1 = document.getElementById('cms-hero-line1');
+    if (l1 && data.hero_line1) l1.textContent = data.hero_line1;
+
+    const hl = document.getElementById('cms-hero-highlight');
+    if (hl && data.hero_highlight) hl.textContent = data.hero_highlight;
+
+    const l2 = document.getElementById('cms-hero-line2');
+    if (l2 && data.hero_line2) l2.textContent = data.hero_line2;
 
     const heroLead = document.getElementById('cms-hero-lead');
     if (heroLead && data.hero_lead) heroLead.textContent = data.hero_lead;
 
     const testimonial = document.getElementById('cms-testimonial');
-    if (testimonial && data.testimonial) testimonial.textContent = data.testimonial;
+    if (testimonial && data.testimonial) testimonial.textContent = '"' + data.testimonial + '"';
 
     if (data.address) {
       document.querySelectorAll('.cms-address').forEach(el => el.textContent = data.address);
@@ -857,6 +869,35 @@
     }
     if (data.phone_number) {
       document.querySelectorAll('.cms-phone-link').forEach(el => el.setAttribute('href', 'tel:' + data.phone_number));
+    }
+
+    if (data.price_1_month) basePrices[1] = data.price_1_month;
+    if (data.price_3_month) basePrices[3] = data.price_3_month;
+    if (data.price_12_month) basePrices[12] = data.price_12_month;
+    if (typeof renderPrices === 'function') renderPrices();
+
+    if (data.offers && data.offers.length > 0) {
+      const grid = document.getElementById('offersGrid');
+      const section = document.getElementById('offersSection');
+      grid.innerHTML = '';
+      data.offers.forEach(offer => {
+        const card = document.createElement('div');
+        card.className = 'offer-card';
+        let html = '';
+        if (offer.image) {
+          html += `<img class="offer-image" src="${offer.image}" alt="${offer.title || ''}">`;
+        }
+        html += `<div class="offer-body">`;
+        html += `<div class="offer-title">${offer.title || ''}</div>`;
+        html += `<div class="offer-desc">${offer.description || ''}</div>`;
+        if (offer.expiry) {
+          html += `<div class="offer-expiry">Valid until ${offer.expiry}</div>`;
+        }
+        html += `</div>`;
+        card.innerHTML = html;
+        grid.appendChild(card);
+      });
+      section.style.display = 'block';
     }
   }).catch(() => {});
 </script>
